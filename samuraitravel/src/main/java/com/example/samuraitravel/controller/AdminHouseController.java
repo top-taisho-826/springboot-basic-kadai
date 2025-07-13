@@ -32,6 +32,7 @@ public class AdminHouseController {
         this.houseService = houseService;
     }
 
+
     @GetMapping
         public String index(@RequestParam(name = "keyword", required = false) String keyword,
                         @PageableDefault(page = 0, size = 10, sort = "id", direction = Direction.ASC) Pageable pageable,
