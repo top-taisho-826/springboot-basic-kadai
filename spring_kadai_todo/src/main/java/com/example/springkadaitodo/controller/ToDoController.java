@@ -11,23 +11,21 @@ import com.example.springkadaitodo.service.ToDoService;
 
 @Controller
 public class ToDoController {
-	 private final ToDoService todoService;
+	private final ToDoService todoService;
 
-	    public ToDoController(ToDoService todoService) {
-	        this.todoService = todoService;
-	    }
+	public ToDoController(ToDoService todoService) {
+		this.todoService = todoService;
+	}
 
-	    @GetMapping("/todo")
-	    public String adminUser(Model model) {
-	        // 最新のユーザーリストを取得
-	        List<ToDo> todos = todoService.getAllTodo();
+	@GetMapping("/todo")
+	public String adminUser(Model model) {
+		// 最新のユーザーリストを取得
+		List<ToDo> todos = todoService.getAllTodo();
 
-	        // ビューにユーザーリストを渡す
-	        model.addAttribute("todos", todos);
+		// ビューにユーザーリストを渡す
+		model.addAttribute("todos", todos);
 
-	      
-	        return "todoView";
-	    }
+		return "todoView";
+	}
 
-	    
-	    }
+}
